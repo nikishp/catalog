@@ -1,0 +1,132 @@
+/* lead-up style */
+//retina
+// https://github.com/strues/retinajs
+// для использования доставляем дата атрибут data-rjs="3", в бекграундах используем миксин
+// +retina('../img/general/', 3, cover, center center no-repeat)
+//@import "../libs/retina/_retina.sass"
+
+//+triangle(right, 5px, 5px, #fff)
+
+@import "smart-grid"
+@import "variabls"
+@import "mixin"
+@import "font"
+@import "sprite"
+//@include retina-sprites($retina-groups) //раскоменить для ретины
+@import "same_style"
+
+// @import "pixel-glass"
+
+/* lead-up style end */
+
+/* blocks style */
+
+/* head */
+@import "../pug/modules/header/header"
+
+/* foot */
+@import "../pug/modules/foot/foot"
+
+/* forms */
+@import "../pug/modules/forms/forms"
+
+/* menu */
+@import "../pug/modules/menu/menu"
+
+/* blocks style end*/
+
+
+//.fotorama__arr, .fotorama__fullscreen-icon, .fotorama__video-close, .fotorama__video-play
+  background-image: url('../img/general/fotorama.png')
+  background-repeat: no-repeat
+
+//smartgrid settings 
+// .container
+//   +container()
+// .row
+//   +row()
+// .col
+//   +col()
+//   +cols(12)
+
+/* page style */
+
+.wrapper
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  
+
+
+.categories
+  color: $white
+  font-weight: 600
+.categories__item
+  position: relative
+  z-index: 3
+  // &:not(:last-child)
+    margin-bottom: 5px
+  margin-bottom: 5px
+  background-color: $blue
+  
+.categories__item--active
+  .categories__link
+    &::before
+      width: 100%
+      opacity: 1
+      background-image: linear-gradient(to right, $action_color 0%, $blue 100%)
+
+.categories__link
+  display: flex
+  align-items: center
+  height: 40px
+  padding: 5px 20px
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    width: 0
+    height: 100%
+    opacity: 0
+    transition: opacity 0.25s linear, width .25s linear
+    background-image: linear-gradient(to right, $action_color 0%, $blue 100%)
+  &:hover
+    &::before
+      width: 100%
+      opacity: 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+/* page style end */
+
+/*media style*/
+@import "media"

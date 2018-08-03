@@ -1,0 +1,101 @@
+mixin svg(name,mod)
+  - mod = mod || ''
+  svg(class="svg svg--" + name + ' ' + mod)
+    use(xlink:href="img/svg/symbol/sprite.svg#" + name)
+
+mixin svg_c(name,mod)
+  - mod = mod || ''
+  svg(class="svg svg--colored svg--" + name + ' ' + mod)
+    use(xlink:href="img/svg/symbol/sprite-colored.svg#" + name)
+
+
+
+mixin btn(clas,href,text,svg)
+  - mod = mod || ''
+  a(href=""+href, class="btn"+clas,)
+    span.btn__svg
+      svg(class="svg svg--"+svg)
+        use(xlink:href="img/svg/symbol/sprite.svg#"+svg)
+    span.btn__name !{text}
+
+
+mixin social(mod)
+  - mod = mod || ''
+  div(class="social "+mod)
+    a.social__url(href="#")
+      span.social__ico
+        +svg('fc') 
+      span @vladagadalka
+    a.social__url(href="#")
+      span.social__ico
+        +svg('inst')
+      span @vladagadalka
+
+mixin phone()
+  .phones
+    a.phones__link(href="tel:+380331234567") 
+      +svg('viber')
+      +svg('whatapp')
+      span + 38 (033) 123 45 67
+    a.phones__link(href="tel:+380449876543") 
+      +svg('viber')
+      +svg('whatapp')
+      span + 38 (044) 987 65 43
+
+
+mixin breadcrumbs()
+  .breadcrumbs-block
+    .container
+      .row
+        .col
+          .breadcrumbs
+            .breadcrumbs__item
+              a.breadcrumbs__link(href="#") Главная
+            .breadcrumbs__item Услуги
+
+
+mixin categories()
+  ul.categories
+    li.categories__item
+      a.categories__link(href="#") Снятие порчи
+    li.categories__item
+      a.categories__link(href="#") Предсказание будущего
+    li.categories__item
+      a.categories__link(href="#") Исцеление от бесплодия
+    li.categories__item
+      a.categories__link(href="#") Гадание на Таро
+    li.categories__item
+      a.categories__link(href="#") Гадание по фотографии
+    li.categories__item.categories__item--active
+      a.categories__link(href="#") Гадание Ленорман
+    li.categories__item
+      a.categories__link(href="#") Гадание на любовь
+    li.categories__item
+      a.categories__link(href="#") Гадание на свеах и воске
+    li.categories__item
+      a.categories__link(href="#") Гадание по личной вещи
+    li.categories__item
+      a.categories__link(href="#") Ритуалы
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- 

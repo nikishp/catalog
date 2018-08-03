@@ -1,0 +1,70 @@
+mixin header(name)
+  - name = name || ''
+  header(class="header " + name)
+    .container
+      .row.row--header
+        .col-lg-6
+          a.logo(href="#")
+            img(src="img/content/logo.png", alt="image")
+            span.logo__slogan Галадка и целительница с божественным даром
+        .col-lg-6
+          .header__media
+            .header__media-item
+              +social('social--header')
+              +btn(' popup-js','#recall','Обратный звонок', 'phone')
+            .header__media-item
+              +phone()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- 

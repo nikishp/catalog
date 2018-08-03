@@ -1,0 +1,19 @@
+mixin foot()
+  footer.foot
+    .foot__top
+      .container
+        .row.row--foot
+          .col-sm-4
+            .foot__item.foot__item--left
+              +phone()
+          .col-sm-4
+            .foot__item.foot__item--center
+              +social()
+          .col-sm-4
+            .foot__item.foot__item--right
+              +btn(' btn--inversion popup-js','#recall','Обратный звонок', 'phone')
+    +menuHover()
+    .foot__bottom
+      .container
+        .row
+          .col © 2018 «Влада»
