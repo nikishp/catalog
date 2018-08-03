@@ -77,7 +77,10 @@ mixin categories()
     li.categories__item
       a.categories__link(href="#") Ритуалы
 
-
+mixin image(src,mod)
+  - mod = mod || ''
+  div(class="image "+mod)
+    img(src=""+src, alt="image")
 
 
 
