@@ -3,4 +3,40 @@ extends ../layout/main
 block head  
   - var title = 'Главная'
   - var bodyClass = ''
-block content
+block content 
+  .top-block.offset
+    .container
+      .row
+        .col-lg-8
+          .main-slider
+            .main-slider__item
+              img(src="img/content/sl_1.jpg", alt="image")
+              .main-slider__item-content
+                .main-slider__item-title Гадание на картах Таро 
+                .main-slider__item-action
+                  +btn('','#','Заказать услугу','right-arrow')
+
+            .main-slider__item
+              img(src="img/content/sl_1.jpg", alt="image")
+              .main-slider__item-content
+                .main-slider__item-title Гадание на картах Таро 2
+                .main-slider__item-action
+                  +btn('','#','Заказать услугу','right-arrow')
+            .main-slider__item
+              img(src="img/content/sl_1.jpg", alt="image")
+              .main-slider__item-content
+                .main-slider__item-title  Далеко-далеко за словесными горами в стране, гласных и согласных живут.
+                .main-slider__item-action
+                  +btn('','#','Заказать услугу','right-arrow')
+
+        .col-lg-4
+          - formTitle = 'Запись на сеанс'
+          - subtitle = '<div class="form__subtitle">Оставьте свои данные и я помогу решить вашу жизненную проблему</div>'
+          +def()
+  .services-block.offset
+    .container
+      .row
+        .col
+          h2.h2.h2--decor
+            span.title-text Услуги
+            span.title-decoration

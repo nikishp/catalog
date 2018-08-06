@@ -60,11 +60,11 @@ module.exports = function() {
         //form validation file
         // 'dev/libs/jquery.validate/jquery.validate.js',
         // 'dev/libs/jquery.validate/messages_ru.js',
-        'node_modules/jquery-validation/dist/jquery.validate.js',
-        'node_modules/jquery-validation/dist/localization/messages_ru.js',
+        // 'node_modules/jquery-validation/dist/jquery.validate.js',
+        // 'node_modules/jquery-validation/dist/localization/messages_ru.js',
 
         //phone mask file
-        'dev/libs/phone.mask/mask.js',
+        // 'dev/libs/phone.mask/mask.js',
 
         //jQuery.dotdotdot-master
         //'dev/libs/jQuery.dotdotdot-master/dist/jquery.dotdotdot.js',

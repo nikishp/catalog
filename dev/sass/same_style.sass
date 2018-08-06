@@ -15,7 +15,7 @@ body
 *:focus::placeholder
   opacity: 0
 *::selection
-  background-color: red
+  background-color: darken(#49e7e6, 20%)
   color: #fff
  
 // body input:focus:required:invalid,
@@ -89,14 +89,38 @@ ul
   list-style-type: none
   margin: 0
   padding: 0
+
+p
+  margin-top: 0
+
 h1,h2,h3,h4,h5,h6
   margin: 20px 0
-  font-weight: normal
+  font-weight: 700
   line-height: 1
 
 .h1,.h2
+  margin-top: 0
+  font-weight: 700
   font-size: 40px
-
+.h2--decor
+  span
+    display: inline-block
+.title-decoration
+  position: absolute
+  top: 65px
+  left: 0
+  right: 0
+  height: 20px
+  background-image: linear-gradient(to right, rgba(49, 212, 209, 0) 0%, $action_color 100%)
+.h3
+  font-size: 35px
+.h4 
+  font-size: 30px
+.h5
+  font-size: 25px
+.h6 
+  font-size: 20px
+  
 .hidden
   display: none
 
@@ -168,6 +192,8 @@ table
   &:hover
     &::before
       clip-path: circle(0 at 10% 50%)
+  .btn__svg
+    // margin-left: 0
 
 
 
@@ -196,10 +222,10 @@ table
 
 
 
+button
+  padding: 0
 
-
-
-button[type='submit']
+// button[type='submit']
   .form-load
     width: 0
     height: 20px
@@ -260,82 +286,315 @@ button[type='submit']
   text-decoration: underline
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
+
+.image
+  position: relative
+  max-width: 265px
+  width: 100%
+  float: left
+  margin-right: 30px
+  margin-bottom: 15px
+  +smx-block()
+    float: none
+    margin-right: 0
+    margin-left: 0
+  &::before
+    content: ''
+    display: block
+    padding-top: 95%
+  img
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    +object-fit(cover)
+.image--right
+  float: right
+  margin-right: 0
+  margin-left: 30px
+
+
+.list
+  margin: 30px 0
+.list__item
+  display: flex
+  align-items: center
+  &::before
+    content: ''
+    display: block
+    +size(14)
+    flex-shrink: 0
+    margin-right: 10px
+    background: $action_color
+    border-radius: 50%
+    box-shadow: inset 0 0 0 2px #fff
+    border: 1px solid $action_color
+
+  &:not(:last-child)
+    margin-bottom: 10px
+
+
+
+
+.numb-list
+  margin: 30px 0
+  counter-reset: section
+.numb-list__item
+  display: flex
+  align-items: center
+  &::before
+    content: counter(section)
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-shrink: 0
+    +size(20)
+    margin-right: 10px
+    line-height: 1
+    border-radius: 50%
+    counter-increment: section
+    border: 1px solid $action_color
+  &:not(:last-child)
+    margin-bottom: 10px
+
+
+
+
+.table
+  width: 100%
+  margin: 25px 0
+  table-layout: fixed
+  // border-spacing: 0
+  .table__td, th
+    width: 25%
+    padding: 10px
+    border: 1px solid $grey
+    // border-bottom: 1px solid rgba(0, 0, 0, 0.2)
+.table__row-title
+  color: #fff
+  background-color: $blue
+  th
+  // +sm-block()
+    display: none
+
+.table__row-content
+  // +sm-block()
+    display: block
+    margin-bottom: 20px
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2)
+
+.table__td
+  &:first-child
+    font-weight: bold
+  // +sm-block()
+    display: block
+    margin-bottom: 20px
+    padding: 0
+    border-bottom: none
+  &::before
+    content: attr(data-title)": "
+    display: none
+    margin-bottom: 5px
+    font-size: 16px
+    font-weight: bold
+    // +sm-block()
+      display: block
+
+
+
+
+.video__item
+  position: relative
+  margin: 25px 0
+  // max-width: 600px
+  background: #000
+
+  img,iframe
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+.video__item-height
+  padding-top: 56.2% //высотой верхнего паддинга задаем соотношение сторон
+  
+.video__item-mask
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, 0.2)
+  cursor: pointer
+  z-index: 10
+  &:hover
+    .svg__youtube-fill
+      fill: #f00
+      fill-opacity: 1
+
+.svg__youtube
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 68px //"стандартыне" размера кнопки 
+  height: 48px //"стандартыне" размера кнопки
+  transform: translateX(-50%) translateY(-50%)
+  z-index: 10
+
+.svg__youtube-fill
+  fill: #212121
+  fill-opacity: .8
+  transition: fill .1s cubic-bezier(0.4,0.0,1,1),fill-opacity .1s cubic-bezier(0.4,0.0,1,1)
+
+
+
+
+blockquote
+  position: relative
+  margin: 25px 0
+  margin-left: 60px
+  padding-left: 20px
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    width: 7px
+    background-image: linear-gradient(to top, $blue 0%, $action_color 100%)
+
+
+
+
+.form-block
+  margin-top: 40px
+  padding: 35px 0 
+  background-color: #353c70
+  background-image: url(../img/general/form_block.png)
+  background-position: center top
+.form
+  position: relative
+  padding: 30px
+  background: #fff
+  .h6
+    margin: 0
+    margin-bottom: 25px
+  .btn
+    &:hover
+      color: $action_color
+  &::before,&::after
+    content: ''
+    position: absolute
+    left: 0
+    right: 0
+    height: 5px
+  &::before
+    top: 0
+    background-image: linear-gradient(to right, $action_color 0%, $blue 100%)
+  &::after
+    bottom: 0
+    background-image: linear-gradient(to right, $blue 0%, $action_color 100%)
+.form--vis
+  max-width: 743px
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+
+
+.form__item
+  position: relative
+  display: block
+  margin-bottom: 25px
+  font-size: 20px
+  label
+    position: absolute
+    top: 50%
+    left: 15px
+    padding: 0 5px
+    color: $grey
+    font-size: 14px
+    font-weight: 400
+    line-height: 1
+    cursor: text
+    transform: translateY(-50%)
+    transition: $tr
+    background: rgba(255, 255, 255, 1)
+  input,textarea
+    display: block
+    // max-width: 360px
+    width: 100%
+    height: 40px
+    transition: $tr
+    border-radius: 5px
+    border: 1px solid $grey
+    padding-left: 15px
+    background: rgba(255, 255, 255, 0)
+  textarea
+    height: 105px
+    padding-top: 15px
+  label.error
+    color: red
+.form__item--textarea
+  label
+    top: 19px
+
+.form__item--focus
+  label
+    top: -8px
+    left: 15px
+
+    transform: translateY(0)
+  input,textarea
+    border-color: $action_color
+  .form__item--textarea
+    label
+
+.form__item--button
+  margin-bottom: 0
+
+.form--vis
+
+  .form__list
+    display: flex
+    flex-wrap: wrap
+    margin-left: -10px
+    margin-right: -10px
+
+.form__list-part
+  width: calc( 50% - 20px )
+  margin: 0 10px
+
+
+.form__subtitle
+  margin-top: -14px
+  margin-bottom: 25px
+  color: $grey
+  font-size: 14px
+  font-weight: 400
+
+
+.form__pricing
+  b
+    color: $action_color
+    font-size: 20px
+    // font-weight: 700
+
+
+.form__foot
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  justify-content: space-between
+  margin-left: -10px
+  margin-right: -10px
+
+.form__foot-item
+  margin: 0 10px
+  
+.form__item--button
+  text-align: center
 
 
 
