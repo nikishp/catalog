@@ -174,10 +174,12 @@ table
   border-radius: 50%
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.15)
   background-color: #49e7e6
+  transition: background-color .25s linear
   .svg
     width: 100%
     height: 100%
     fill: #fff
+    transition: fill .25s linear
 
 .btn__name
   flex-grow: 1
@@ -185,22 +187,38 @@ table
   text-align: center
   // background: red
 
-
 .btn--inversion
   &::before
     clip-path: circle(200% at 10% 50%)
   &:hover
     &::before
       clip-path: circle(0 at 10% 50%)
+
+.btn--reverse
+  flex-direction: row-reverse
+  padding-left: 16px
+  padding-right: 0
+  .btn__name
+    margin-left: 0
+    margin-right: 10px
   .btn__svg
-    // margin-left: 0
+    margin-left: 0
+    margin-right: 4px
+  &::before
+    clip-path: circle(0% at 90% 50%)
+  &:hover
+    &::before
+      clip-path: circle(200% at 90% 50%)
 
+.btn--inversion-reverse
+  &::before
+    clip-path: circle(200% at 90% 50%)
+  &:hover
+    &::before
+      clip-path: circle(0 at 90% 50%)
 
-
-
-
-
-
+.btn--blue
+  color: $action_color
 
 
 

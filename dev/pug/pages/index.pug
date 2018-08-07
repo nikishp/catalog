@@ -33,6 +33,7 @@ block content
           - formTitle = 'Запись на сеанс'
           - subtitle = '<div class="form__subtitle">Оставьте свои данные и я помогу решить вашу жизненную проблему</div>'
           +def()
+  
   .services-block.offset
     .container
       .row
@@ -40,3 +41,327 @@ block content
           h2.h2.h2--decor
             span.title-text Услуги
             span.title-decoration
+
+
+      .row.row--serv-items
+        .col-lg-4
+          .services-block__item
+            .services-block__title Гадание на будущее
+            .services-block__icon
+              +svg1()
+            .services-block__action
+              +btn(' btn--inversion-reverse btn--reverse','#','Заказать услугу','right-arrow')
+            a.services-block__details(href="#") Подробнее
+
+        .col-lg-4
+          .services-block__item
+            .services-block__title Целительство
+            .services-block__icon
+              +svg2()
+            .services-block__action
+              +btn(' btn--inversion-reverse btn--reverse','#','Заказать услугу','right-arrow')
+            a.services-block__details(href="#") Подробнее
+
+        .col-lg-4
+          .services-block__item
+            .services-block__title Изготовление амулетов,<br> оберегов и талисманов
+            .services-block__icon
+              +svg3()
+            .services-block__action
+              +btn(' btn--inversion-reverse btn--reverse','#','Заказать услугу','right-arrow')
+            a.services-block__details(href="#") Подробнее
+
+        .col-lg-4
+          .services-block__item
+            .services-block__title Любовная магия
+            .services-block__icon
+              +svg4()
+            .services-block__action
+              +btn(' btn--inversion-reverse btn--reverse','#','Заказать услугу','right-arrow')
+            a.services-block__details(href="#") Подробнее
+
+        .col-lg-4
+          .services-block__item
+            .services-block__title Гадание на картах Таро
+            .services-block__icon
+              +svg5()
+            .services-block__action
+              +btn(' btn--inversion-reverse btn--reverse','#','Заказать услугу','right-arrow')
+            a.services-block__details(href="#") Подробнее
+
+        .col-lg-4
+          .services-block__item
+            .services-block__title Магическая защита
+            .services-block__icon
+              +svg6()
+            .services-block__action
+              +btn(' btn--inversion-reverse btn--reverse','#','Заказать услугу','right-arrow')
+            a.services-block__details(href="#") Подробнее
+
+        .col-lg-4
+          .services-block__item
+            .services-block__title Помощь в бизнесе
+            .services-block__icon
+              +svg7()
+            .services-block__action
+              +btn(' btn--inversion-reverse btn--reverse','#','Заказать услугу','right-arrow')
+            a.services-block__details(href="#") Подробнее
+
+        .col-lg-4
+          .services-block__item
+            .services-block__title Ясновидение
+            .services-block__icon
+              +svg8()
+            .services-block__action
+              +btn(' btn--inversion-reverse btn--reverse','#','Заказать услугу','right-arrow')
+            a.services-block__details(href="#") Подробнее
+
+        .col-lg-4
+          .services-block__item
+            .services-block__title Ритуалы
+            .services-block__icon
+              +svg9()
+            .services-block__action
+              +btn(' btn--inversion-reverse btn--reverse','#','Заказать услугу','right-arrow')
+            a.services-block__details(href="#") Подробнее
+
+  .about-block.offset
+    .container
+      .row
+        .col
+          h2.h2.h2--decor
+            span.title-text Обо мне
+            span.title-decoration
+      .row
+        .col-lg-4
+          +image('img/general/about.jpg','image--static')
+        .col-lg-8
+          .desc-block Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности требуют от нас анализа соответствующий условий активизации. Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям. Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности требуют определения и уточнения новых предложений. Товарищи! дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание существенных финансовых и административных условий.
+            .desc-block__action
+              +btn(' btn--reverse btn--blue','#','Подробнее','right-arrow')
+
+  .why-block.offset
+    .container 
+      .row
+        .col
+          h2.h2 Почему люди ко мне обращаются
+
+      .row.row--why-block 
+        .col-lg-4
+          .why-block__item
+            .why-block__img: img(src="img/general/why_1.jpg", alt="image")
+            b.why-block__title БЕЛАЯ МАГИЯ
+            p Сила, которой я обладаю,<br>сильнее черной магии,и помогает<br>избавиться от негативного воздействия
+
+        .col-lg-4
+          .why-block__item
+            .why-block__img: img(src="img/general/why_2.jpg", alt="image")
+            b.why-block__title МОЩНЕЙШАЯ ЗАЩИТА
+            p Я обладаю уникальными<br> методиками, которые защитят Вас<br> и ваших близких от темных сил
+
+        .col-lg-4
+          .why-block__item
+            .why-block__img: img(src="img/general/why_3.jpg", alt="image")
+            b.why-block__title МНОГОЛЕТНИЙ ОПЫТ
+            p Практических опыт, который передается<br> из поколения в поколения в нашем роду, <br> позволяет мне решать <br> проблемы любой сложности
+
+        .col-lg-4
+          .why-block__item
+            .why-block__img: img(src="img/general/why_4.jpg", alt="image")
+            b.why-block__title ТОЧНЫЕ ГАДАНИЯ
+            p Мой дар дает возможность <br> увидеть Вашу судьбу <br> даже с закрытыми глазами
+
+        .col-lg-4
+          .why-block__item
+            .why-block__img: img(src="img/general/why_5.jpg", alt="image")
+            b.why-block__title ПОМОЩЬ БЕЗ ВРЕДА И ГРЕХА
+            p Моя энергетика направлена на <br> помощь нуждающимся, дабы не навредить, <br> а оказать реальную помощь <br> без вреда и греха
+
+        .col-lg-4
+          .why-block__item
+            .why-block__img: img(src="img/general/why_6.jpg", alt="image")
+            b.why-block__title ПОМОЩЬ ДИСТАНЦИОННО
+            p Мой многолетний опыт и сила позволяют <br> оказать помощь даже дистанционно <br> по фотографии или телефону
+
+
+      .row
+        .col
+          .why-block__action
+            +btn(' btn--reverse', '#', 'Записаться на прием', 'right-arrow')
+
+  .help-block.offset
+    .container 
+      .row
+        .col
+          h2.h2 Ситуации в которых могу вам помочь
+
+          ul.ok-list
+            li.ok-list__item
+              +svg('ok')
+              | Любовь без взаимности, конфликты с близкими людьми
+            li.ok-list__item
+              +svg('ok')
+              | Любовь без взаимности, конфликты с близкими людьми
+            li.ok-list__item
+              +svg('ok')
+              | Дефицит финансов, долги
+            li.ok-list__item
+              +svg('ok')
+              | Дефицит финансов, долги
+            li.ok-list__item
+              +svg('ok')
+              | Слабая энергетика, плохая карма и кармические долги
+            li.ok-list__item
+              +svg('ok')
+              | Слабая энергетика, плохая карма и кармические долги
+            li.ok-list__item
+              +svg('ok')
+              | Слабая энергетика, плохая карма и кармические долги
+
+  .work-block.offset
+    .container
+      .row
+        .col
+          h2.h2.h2--decor
+            span.title-text Как я работаю
+            span.title-decoration
+          ul.work__list
+            li.work__list-item(style="background-image: url(img/general/work_1.png)") Оставляйте заявку на сайте <br> или звоните по телефону <br> <a href="tel:+380331234567"> +38 (033) 123 45 67</a>
+            li.work__list-item(style="background-image: url(img/general/work_2.png)") Обговариваем удобное <br> для Вас время сеанса
+            li.work__list-item(style="background-image: url(img/general/work_3.png)") Вы оплачиваете полную <br> либо частичную <br> стоимость сеанса
+            li.work__list-item(style="background-image: url(img/general/work_4.png)") Проводим сеансы
+            li.work__list-item(style="background-image: url(img/general/work_5.png)") Вы производите оплату <br> и оставляете отзыв
+
+  .for-what-block.offset
+    .container
+      .row
+        .col
+          h2.h2.h2--decor
+            span.title-text Для чего нужна оплата
+            span.title-decoration
+
+      .row 
+        .col-lg-4
+          +image('img/general/what_img.jpg','image--static')
+        .col-lg-8
+          .desc-block Не верьте, когда говорят о том, что настоящие маги денег не берут – наоборот, опасайтесь таких магов, потому что вместо денег они могут взять ваше здоровья и жизненную энергию в качестве взаимообмена, что в итоге выйдет гораздо хуже и дороже… Настоящие маги берут деньги, потому что мы живем в материальном мире, а деньги являются самой сильной и универсальной энергией, которая лучше всего подходит для оплаты магических воздействий – энергетического взаимообмена (который необходим для сохранения равновесия во Вселенной) 
+            .row.row-align
+              .col-lg-8 
+                p Принимаю оплату на карту Приватбанка или денежными переводами Western Union. Оплата производится перед проведением сеанса. Возможна оплата частями.
+              .col-lg-4
+                p: img(src="img/general/payment.png", alt="image")
+
+
+  .gallery-block.offset
+    .container
+      .row
+        .col
+          h2.h2 Галерея
+
+      .row.row--gallery
+        .col-lg-4
+          a.gallery__item(href="#")
+            img(src="img/general/gal_1.jpg", alt="image")  
+        .col-lg-4
+          a.gallery__item(href="#")
+            img(src="img/general/gal_2.jpg", alt="image")            
+        .col-lg-4
+          a.gallery__item(href="#")
+            img(src="img/general/gal_3.jpg", alt="image")          
+        .col-lg-4
+          a.gallery__item(href="#")
+            img(src="img/general/gal_4.jpg", alt="image")          
+        .col-lg-4
+          a.gallery__item(href="#")
+            img(src="img/general/gal_5.jpg", alt="image")     
+        .col-lg-4
+          a.gallery__item(href="#")
+            img(src="img/general/gal_6.jpg", alt="image")
+        .col-12
+          .gallery__action
+            +btn(' btn--blue btn--reverse','#','Смотреть все фото','right-arrow')
+
+
+
+  .articles-block.offset
+    .container
+      .row
+        .col
+          h2.h2.h2--decor
+            span.title-text Магические статьи
+            span.title-decoration
+
+      .row
+        .col-lg-6
+          .articles__item
+            .articles__item-part
+              .articles__img: img(src="img/general/article_1.jpg", alt="image")
+            .articles__item-part
+              b.articles__title Задача организации, в особенности же реализация
+              p Таким образом консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. Задача организации, в особенности же рамки и место обучения кадров играет важную роль в формировании...
+              .articles__action
+                +btn(' btn--reverse btn--blue', '#', 'Подробнее', 'right-arrow')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- 

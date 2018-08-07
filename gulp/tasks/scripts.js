@@ -19,7 +19,7 @@ module.exports = function() {
 
         //fancybox 3
         // https://fancyapps.com/fancybox/3/
-        // 'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
+        'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
 
         /*flatpickr */
         //https://flatpickr.js.org/

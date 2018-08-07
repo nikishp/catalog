@@ -60,7 +60,7 @@
 .offset
   position: relative
   padding: 50px 0
-
+ 
 
 
 .categories
@@ -211,41 +211,278 @@
   [class*="col"]
     position: static
 
+.row--serv-items
+  [class*="col"]
+    margin-top: 30px
+.services-block__item
+  position: relative
+  z-index: 3
+  padding: 15px
+  padding-top: 50px
+  text-align: center
+  background: #f2f3f8
+  &::before
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    z-index: -1
+    width: 100%
+    height: 0
+    background-image: linear-gradient( to top, rgb(39,45,89) 0%, rgb(73,231,230) 100%);
+    transition: height .25s linear
+  &:hover
+    color: #fff
+    &::before
+      height: 100%
+    svg
+      path
+        fill: #fff
+  .btn
+    &:hover
+      box-shadow: inset 0 0 0 1px #fff
+      .btn__svg
+        background: #fff
+      .svg
+        fill: $action_color
+.services-block__title
+  height: 80px
+  font-size: 20px;
+  font-weight: 700;
+  transition: color .25s linear
+.services-block__icon
+  height: 150px
+  margin: 30px 0
+  margin-top: 0
+  // outline: $ou
+  svg
+    width: 100%
+    height: 100%
+    path
+      transition: fill .25s linear !important
+
+
+.services-block__details
+  display: block
+  margin-top: 15px
+  color: $grey
+  font-size: 14px
+  text-decoration: underline
+
+
+
+.about-block
+  background: #f2f3f8
+  [class*="col"]
+    position: static
+  .image
+    &::before
+      padding-top: 100%
+.image--static
+  max-width: 100%
+  width: 100%
+  float: none
+  margin-right: 0
+  margin-bottom: 0
+
+.desc-block
+  height: 100%
+  padding: 5% 8%
+  background: #fff
+  p
+    margin: 20px 0
+.desc-block__action
+  margin-top: 15px
+
+
+
+.why-block
+  color: #fff
+  background-image: url(../img/general/form_block.png), linear-gradient( 90deg, rgb(53,60,112) 0%, rgb(27,32,72) 100%)
+  background-position: center 0
+  .h2
+    margin-bottom: 45px
+    text-align: center
+
+.why-block__item
+  text-align: center
+
+.why-block__img
+  img
+    +size(115)
+    // width: 100%
+    // height: 100%
+    +object-fit(cover)
+    border-radius: 50%
+    border: 2px solid rgba(255, 255, 255, 0)
+    transition: border .25s linear
+    &:hover
+      border-color: $action_color
+.why-block__title
+  display: block
+  margin: 15px 0
+  font-weight: 600
+  text-transform: uppercase
+
+
+.why-block__action
+  text-align: center
+
+
+.row--why-block
+  [class*="col"]
+    margin-bottom: 40px
 
 
 
 
 
+.help-block
+  background: #f2f3f8
+
+
+
+.ok-list
+  display: flex
+  flex-wrap: wrap
+  margin-left: -10px
+  margin-right: -10px
+  font-weight: 600
+  line-height: 1.1
+.ok-list__item
+  display: flex
+  align-items: center
+  width: 50%
+  margin-top: 35px
+  padding-left: 10px
+  padding-right: 10px
+  .svg
+    width: 17px
+    height: 13px
+    flex-shrink: 0
+    margin-right: 10px
+    fill: $action_color
+
+
+.work-block
+  [class*="col"]
+    position: static
+
+
+
+.work__list
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  margin-top: -25px
+  margin-left: -10px
+  margin-right: -10px
+.work__list-item
+  position: relative
+  width: calc(33.33% - 20px)
+  min-height: 134px
+  margin-top: 80px
+  margin-right: 10px
+  margin-left: 10px
+  padding-top: 30px
+  padding-left: 70px
+  font-size: 16px
+  font-weight: 700
+  +lh(24,16)
+  background-repeat: no-repeat
+  // background-color: silver
+  &:not(:last-child)
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+      // width: 33px
+      // height: 61px
+      background-image: url(../img/general/arimg.png)
+      background-position: 100% center
+      background-repeat: no-repeat
+
+  &:nth-child(3)
+    &::after
+      display: none
+
+
+.for-what-block
+  background: #f2f3f8
+  [class*="col"]
+    position: static
+  .h2
+    margin-bottom: 40px
+
+.about-block
+  .h2
+    margin-bottom: 40px
+
+.desc-block__foot
+  display: flex
+  // flex-wrap: wrap
+  justify-content: space-between
+  background: red
+
+.row-align
+  align-items: center
+
+
+.gallery-block
+  .h2
+    margin-bottom: 40px
+.row--gallery
+  [class*="col"]
+    margin-bottom: 30px
+    &:nth-child(even)
+      .gallery__item
+        &:hover
+          img 
+            transform: rotate(-3deg) scale(0.9)
+
+.gallery__item
+  position: relative
+  display: block
+  font-size: 0
+  overflow: hidden
+  &::before
+    content: ''
+    display: block
+    padding-top: 100%
+  img
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    +object-fit(cover)
+    transition: transform .25s linear, opacity .25s linear, filter .25s linear
+  &:hover
+    img 
+      transform: rotate(3deg) scale(0.9)
+      filter: sepia(60%);
+
+.gallery__action
+  text-align: center
 
 
 
 
 
+.articles-block
+  background: #f2f3f8
+  [class*="col"]
+    position: static
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.articles__item
+  display: flex
+.articles__item-part
+  width: 50%
 
 
 
