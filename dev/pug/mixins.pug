@@ -47,7 +47,8 @@ mixin breadcrumbs()
           .breadcrumbs
             .breadcrumbs__item
               a.breadcrumbs__link(href="#") Главная
-            .breadcrumbs__item Услуги
+            //- .breadcrumbs__item Услуги
+            .breadcrumbs__item #{title}
 
 mixin categories()
   ul.categories
