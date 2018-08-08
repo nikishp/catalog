@@ -478,30 +478,68 @@
     position: static
 
 
+.row--articles
+  [class*="col"]
+    margin-bottom: 30px
+
 
 .articles__item
   display: flex
-.articles__item-part
-  width: 50%
+  background: rgba(0, 0, 0, 0.1)
+  background: #fff
+  .articles__item-part
+    width: 50%
+    // background: green
+    &:last-child
+      padding: 30px
+.articles__img
+  position: relative
+  height: 100%
+  font-size: 0
+  // background: red
+  // overflow: hidden
+  // transition: filter .25s linear
+  img
+    width: 100%
+    height: 100%
+    +object-fit(cover)
+  .articles__img
+  &:hover
+  +imgGlitch("articles__img", 6, 501, 369, 0, 0)
+
+
+  // (IMAGE) PARAMS
+  // =================
+  // @mixin imgGlitch($name, $intensity, $width, $height, $top, $left)
+  // =================
+  // 1. Namespace
+  // 2. Intensity
+  // 3. Width (px)
+  // 4. Height (px)
+  // 5. Top (px, abs pos)
+  // 6. Left (px, abs pos)
 
 
 
 
 
+.articles__title
+  display: block
+  margin-bottom: 20px
+  font-weight: 600
 
 
+.articles__desc
+  height: 180px
+  font-size: 14px
+  +lh(22,14)
+
+.articles-block__action
+  text-align: center
 
 
-
-
-
-
-
-
-
-
-
-
+.example-three 
+  // @include imgGlitch("example-three", 15, 100, 100, 200, 75)
 
 
 

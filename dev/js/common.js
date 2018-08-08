@@ -9,14 +9,35 @@
 
     //dynamicHeight($('.you_class'));
 
+      $(".articles__img").each(function(index, el) {
+        $(this).hover(function() {
+          /* Stuff to do when the mouse enters the element */
+        }, function() {
+          /* Stuff to do when the mouse leaves the element */
+        });
+          var img = $(this).html();
+          $(this).append(img).append(img);
+          $(this).find('img').eq(1).css('filter', 'hue-rotate(90deg)');
+      });
+
+
+
+    $(".articles__desc").dotdotdot({
+      ellipsis: "\u2026 ",
+      // height: 190,
+      watch: "window",
+    });
+
+
+
     $('.h2--decor').each(function(index, el) {
       var leftPosition = $(this).children('.title-text').offset().left,
       // curWidth = $(this).children('.title-text').width(),
       curWidth = $(this).children('.title-text').outerWidth(true,true),
       totalPosition = leftPosition + curWidth;
-      console.log("leftPosition", leftPosition); 
-      console.log("curWidth", curWidth);
-      console.log("totalPosition", totalPosition);
+      // console.log("leftPosition", leftPosition); 
+      // console.log("curWidth", curWidth);
+      // console.log("totalPosition", totalPosition);
       $(this).children('.title-decoration').css('left', totalPosition);
 
     });
