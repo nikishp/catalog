@@ -333,6 +333,19 @@ button
   margin-right: 0
   margin-left: 30px
 
+.image--effect
+  img
+    transition: filter .25s linear
+  &:hover
+    img
+      filter: contrast(200%)
+.image--static
+  max-width: 100%
+  width: 100%
+  float: none
+  margin-right: 0
+  margin-bottom: 0
+
 
 .list
   margin: 30px 0
@@ -614,13 +627,38 @@ blockquote
 .form__item--button
   text-align: center
 
+.pagination
+  padding-top: 30px
+  padding-bottom: 50px
+  font-weight: 700
 
+.pagination__list
+  display: flex
+  justify-content: center
+  align-items: center
 
+.pagination__item
+  position: relative
+  &:not(:last-child)
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      width: 2px
+      background: $action_color
+  &:hover
+    color: $action_color
 
-
-
-
-
+.pagination__link
+  display: block
+  width: 25px
+  text-align: center
+  transition: color .25s linear
+  
+.pagination__item--active
+  color: $action_color
 
 
 

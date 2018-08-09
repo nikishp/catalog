@@ -78,6 +78,24 @@ mixin image(src,mod)
   div(class="image "+mod)
     img(src=""+src, alt="image")
 
+mixin pagination(mod)
+  - mod = mod || ''
+  section(class="pagination "+mod)
+    .container
+      .row
+        .col
+          ul.pagination__list
+            li.pagination__item.pagination__item--active
+              a.pagination__link(href="#") 1
+            li.pagination__item
+              a.pagination__link(href="#") 2
+            li.pagination__item
+              a.pagination__link(href="#") 3
+
+
+
+
+
 mixin svg1()
   <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 467.94 512"><defs><linearGradient id="a" x1="256" y1="515" x2="256" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#353c70"/><stop offset="1" stop-color="#31d4d1"/></linearGradient><linearGradient id="b" x1="412.27" x2="412.27" xlink:href="#a"/><linearGradient id="c" x1="371.4" y1="514.99" x2="371.4" xlink:href="#a"/><linearGradient id="d" x1="285.79" y1="515.02" x2="285.79" xlink:href="#a"/></defs><path d="M423.39 427.5v-43.35c37.89-43.46 58.7-98.41 58.7-155.33v-2.73C482.09 101.42 380.66 0 256 0S29.92 101.42 29.92 226.09v2.73c0 56.92 20.8 111.87 58.69 155.33v43.35A75.93 75.93 0 0 0 22 502.75a9.25 9.25 0 0 0 9.28 9.25h449.44a9.25 9.25 0 0 0 9.25-9.25 75.93 75.93 0 0 0-66.58-75.25zm-375-198.68v-2.73C48.42 111.62 141.54 18.5 256 18.5s207.58 93.12 207.58 207.59v2.73c0 52.69-19.38 103.59-54.66 143.78H103.09c-35.29-40.19-54.67-91.09-54.67-143.78zM404.88 391.1v35.81H107.12V391.1zM41.28 493.5a57.42 57.42 0 0 1 56.58-48.08h316.28a57.42 57.42 0 0 1 56.58 48.08z" transform="translate(-22.03)" fill="url(#a)"/><path d="M400 338.26a9.25 9.25 0 1 1-14.2-11.86c33.94-40.66 45.4-97.56 29.92-148.5a9.25 9.25 0 1 1 17.7-5.38c17.23 56.84 4.42 120.34-33.42 165.74z" transform="translate(-22.03)" fill="url(#b)"/><path d="M409.18 140a9.25 9.25 0 0 1-12.79-2.75c-14.06-21.8-34.91-39.91-62-53.83A9.25 9.25 0 1 1 342.87 67c30 15.42 53.23 35.69 69.07 60.24a9.25 9.25 0 0 1-2.76 12.76z" transform="translate(-22.03)" fill="url(#c)"/><path d="M313.42 65.15a9.26 9.26 0 0 1-9 7.15 9.09 9.09 0 0 1-2.12-.25 154.78 154.78 0 0 0-35.13-4 9.25 9.25 0 0 1 0-18.5A173.46 173.46 0 0 1 306.51 54a9.26 9.26 0 0 1 6.91 11.15z" transform="translate(-22.03)" fill="url(#d)"/></svg>
 
