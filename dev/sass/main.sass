@@ -534,8 +534,207 @@
   text-align: center
 
 
-.example-three 
-  // @include imgGlitch("example-three", 15, 100, 100, 200, 75)
+.gallery-page
+  .gallery__item:hover img, .row--gallery [class*=col]:nth-child(even) .gallery__item:hover img
+    transform: none
+
+
+
+
+.accordion
+  padding-bottom: 30px
+// necessary style
+.accordion__item
+  margin-bottom: 20px
+
+.accordion__content
+  display: none
+
+.accordion__arrow
+  flex-shrink: 0
+  display: block
+  margin-left: auto
+  font-size: 0
+  line-height: 0
+  transition: all .25s linear
+
+.accordion__item--active
+  .accordion__arrow
+    transform: rotate(180deg)
+  .accordion__content
+    display: block
+// necessary style end
+
+.accordion__title
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  cursor: pointer
+  padding: 10px
+  font-weight: 700
+  background: rgba(255, 255, 255, 0)
+  border-radius: 5px
+  border: 1px solid $action_color
+  .svg--question
+    +size(20)
+    align-self: flex-start
+    margin-top: 3px
+    margin-right: 15px
+    fill: $action_color
+    // background: #000
+  .svg--down
+    display: block
+    width: 15px
+    height: 15px
+    // margin-right: 15px
+    fill: $action_color
+.accordion__content
+  padding: 15px 45px
+  font-size: 14px
+  +lh(22,14)
+
+
+.contact__phones
+  font-size: 30px
+  font-weight: 600
+
+.contact__phones-link
+  display: flex
+  align-items: center
+  margin-bottom: 25px
+  span
+    display: inline-block
+    width: 30px
+    height: 30px
+    margin-left: 30px
+    padding: 8px
+    font-size: 0
+    border-radius: 50%
+    &:last-child()
+      margin-left: 10px
+  .svg
+    width: 100%
+    height: 100%
+    fill: #fff
+
+  .viber
+    background-color: #7c3cae
+
+  .wt
+    background-color: #1bd741
+
+
+
+.row-contact
+  margin-top: 72px
+
+.contact__solial
+  margin-top: 52px
+
+.contact__solial-link
+  display: inline-flex
+  flex-direction: column
+  align-items: center
+  margin-right: 40px
+  font-size: 0
+  span
+    display: block
+    width: 50px
+    height: 50px
+    padding: 10px
+    border-radius: 50%
+    background-color: #3b5998
+  .svg
+    width: 100%
+    height: 100%
+    fill: #fff
+
+  b
+    display: inline-block
+    margin-top: 10px
+    padding: 5px 10px
+    border-radius: 5px
+    color: #3b5998
+    font-size: 14px
+    font-weight: 600
+    background-color: rgba(59, 89, 152, .15)
+
+
+
+.contact__solial-link--inst
+  span
+    background-image: linear-gradient(45deg, #4f5bd5 0%, #962fbf 27%, #d62976 51%, #fa7e1e 75%, #feda75 100%)
+  b
+    color: #af29a8
+    background-color: rgba(175, 41, 168, .15)
+
+
+.contact-img
+  padding-top: 8px
+
+
+
+.form--contact
+  background: #f2f3f8
+  .form__item label
+    background: #f2f3f8
+  .form__item--button
+    text-align: left
+  .btn
+    &:hover
+      color: $action_color
+
+
+
+.faq-page
+  .foot
+    margin-top: 140px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

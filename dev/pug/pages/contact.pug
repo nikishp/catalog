@@ -1,0 +1,70 @@
+extends ../layout/main
+
+block head  
+  - var title = 'Вопрос-ответ'
+  - var bodyClass = 'faq-page'
+block content
+  +breadcrumbs() 
+
+  .container
+    .row
+      .col-lg-7
+        .contact__phones
+          a(href="tel:+380331234567").contact__phones-link + 38 (033) 123 45 67
+            span.viber
+              +svg('call') 
+            span.wt
+              +svg('whatapp') 
+          a(href="tel:+ 380449876543").contact__phones-link + 38 (044) 987 65 43
+            span.viber
+              +svg('call') 
+            span.wt
+              +svg('whatapp') 
+        .contact__solial
+          .contact__solial-link.contact__solial-link--fc
+            span
+              +svg('fc')
+            b @vladagadalka
+          .contact__solial-link.contact__solial-link--inst
+            span
+              +svg('inst')
+            b @vladagadalka
+        .row.row-contact
+          .col-lg-8 Принимаю оплату на карту Приватбанка или денежными переводами Western Union. Оплата производится перед проведением сеанса. Возможна оплата частями.
+          .col-lg-4
+            .contact-img
+              img(src='img/general/pay2.png', alt='image')
+
+      .col-lg-5
+        .contact__form
+          - formTitle = 'Обратная связь'
+          +def_text('form--contact')
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
