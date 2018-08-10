@@ -9,19 +9,57 @@
 
     //dynamicHeight($('.you_class'));
 
+    $('.universal-nav__item').hover(function() {
+
+      $(this).addClass('menu-open');
+    }, function() {
+
+      // $(this).removeClass('menu-open');
+    });
 
 
 
-   var $btns = $('.btn').click(function() {
-    if (this.id == 'all') {
-      $('#parent > div').fadeIn(450);
-    } else {
-      var $el = $('.' + this.id).fadeIn(450);
-      $('#parent > div').not($el).hide();
-    }
-    $btns.removeClass('active');
-    $(this).addClass('active');
-  });
+    $(".reviews__item-desc").dotdotdot({
+      ellipsis: "\u2026 ",
+      truncate: "word",
+      height: 60,
+      watch: "window",
+    });
+
+
+
+    $('.reviews__item-controll').on('click', function(event) {
+      var $this = $(this);
+      var textOnClick = $this.parents('.reviews__item').find('.reviews__item-desc').dotdotdot({
+        ellipsis: "\u2026 ",
+        truncate: "word",
+        height: 60,
+        watch: "window",
+      }).data( "dotdotdot" ); 
+
+      if ($this.children('span').text() === "Показать весь отзыв") {
+        $this.addClass('reviews__item-controll--open').children('span').text("Скрыть");
+        textOnClick.restore();
+      } else {
+        $this.removeClass('reviews__item-controll--open').children('span').text('Показать весь отзыв');
+        textOnClick.truncate();
+      }
+    });
+
+
+    var $btns = $('.reviews__control-link').click(function() {
+
+      console.log($(this).data('filter'));
+
+      if ($(this).data('filter') == 'all') {
+        $('.reviews__item').fadeIn(450);
+      } else {
+        var $el = $('.' + $(this).data('filter')).fadeIn(450);
+        $('.reviews__item').not($el).hide();
+      }
+      $btns.removeClass('reviews__control-link--active');
+      $(this).addClass('reviews__control-link--active');
+    })
 
 
     //open first element on page load
@@ -265,206 +303,206 @@
 
 
     //menu on hover
-    var startWidth = 1100;
-    var menu = $('.header__list');
-    var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    // var startWidth = 1100;
+    // var menu = $('.header__list');
+    // var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
-    function removeInline() {
-      if (windowWidth > startWidth) {
-        menu.attr("style", "");
+    // function removeInline() {
+    //   if (windowWidth > startWidth) {
+    //     menu.attr("style", "");
 
-        $('.header__list-sublist-wrap').attr("style", "");
-        $('.hamburger--collapse').removeClass('is-active');
-      };
-    };
-    // removeInline();
+    //     $('.header__list-sublist-wrap').attr("style", "");
+    //     $('.hamburger--collapse').removeClass('is-active');
+    //   };
+    // };
+    // // removeInline();
 
-    function menuOn() {
-        //activate the menu only if the width of the window is less than the specified
-        if (windowWidth <= startWidth) {
+    // function menuOn() {
+    //     //activate the menu only if the width of the window is less than the specified
+    //     if (windowWidth <= startWidth) {
 
-            //open menu
-            $('#openup').on('click', function(e) {
-              e.preventDefault();
-              $('.header__list-open-submenu').removeClass('header__list-open-submenu--open');
-              $('.hamburger--collapse').stop(true, true).toggleClass('is-active');
-              $('.header__list-sublist-wrap').attr("style", "");
-              menu.stop(true, true).slideToggle();
-            });
+    //         //open menu
+    //         $('#openup').on('click', function(e) {
+    //           e.preventDefault();
+    //           $('.header__list-open-submenu').removeClass('header__list-open-submenu--open');
+    //           $('.hamburger--collapse').stop(true, true).toggleClass('is-active');
+    //           $('.header__list-sublist-wrap').attr("style", "");
+    //           menu.stop(true, true).slideToggle();
+    //         });
 
-            //hide the menu when clicking on the first and second level link
-            $('.header__list-link,.header-sublist__link').on('click', function(event) {
-              $('.header__list-sublist-wrap').css('display', 'none');
-              $('.header__list-open-submenu').removeClass('header__list-open-submenu--open');
-              menu.stop(true, true).slideToggle();
-              $('.hamburger--collapse').stop(true, true).toggleClass('is-active');
-            });
+    //         //hide the menu when clicking on the first and second level link
+    //         $('.header__list-link,.header-sublist__link').on('click', function(event) {
+    //           $('.header__list-sublist-wrap').css('display', 'none');
+    //           $('.header__list-open-submenu').removeClass('header__list-open-submenu--open');
+    //           menu.stop(true, true).slideToggle();
+    //           $('.hamburger--collapse').stop(true, true).toggleClass('is-active');
+    //         });
 
-            //open submenu
-            $('.header__list-open-submenu').on('click', function(event) {
-              if ($(this).hasClass("header__list-open-submenu--open")) {
-                $('.header__list-open-submenu').removeClass('header__list-open-submenu--open');
-                $('.header__list-sublist-wrap').attr("style", "");
-                $(this).removeClass('header__list-open-submenu--open').parents('.header__list-item').find('.header__list-sublist-wrap').attr("style", "");
-                    // console.log('true')
-                  } else {
-                    $('.header__list-open-submenu').removeClass('header__list-open-submenu--open');
-                    $('.header__list-sublist-wrap').attr("style", "");
-                    $(this).addClass('header__list-open-submenu--open').parents('.header__list-item').find('.header__list-sublist-wrap').css('display', 'block');
-                    // console.log('false')
-                  }
-                });
+    //         //open submenu
+    //         $('.header__list-open-submenu').on('click', function(event) {
+    //           if ($(this).hasClass("header__list-open-submenu--open")) {
+    //             $('.header__list-open-submenu').removeClass('header__list-open-submenu--open');
+    //             $('.header__list-sublist-wrap').attr("style", "");
+    //             $(this).removeClass('header__list-open-submenu--open').parents('.header__list-item').find('.header__list-sublist-wrap').attr("style", "");
+    //                 // console.log('true')
+    //               } else {
+    //                 $('.header__list-open-submenu').removeClass('header__list-open-submenu--open');
+    //                 $('.header__list-sublist-wrap').attr("style", "");
+    //                 $(this).addClass('header__list-open-submenu--open').parents('.header__list-item').find('.header__list-sublist-wrap').css('display', 'block');
+    //                 // console.log('false')
+    //               }
+    //             });
 
-            // close menu if click on "body"
-            $(document).mouseup(function(e) {
-              if (menu.is(":visible") && $(e.target).closest('.header__nav-wrap').length == 0) {
-                $('.header__list-sublist-wrap').css('display', 'none');
-                $('.header__list-open-submenu').removeClass('header__list-open-submenu--open');
-                menu.stop(true, true).slideToggle();
-                $('.hamburger--collapse').stop(true, true).toggleClass('is-active');
-                    // console.log('close menu if click on "body"')
-                  }
-                });
+    //         // close menu if click on "body"
+    //         $(document).mouseup(function(e) {
+    //           if (menu.is(":visible") && $(e.target).closest('.header__nav-wrap').length == 0) {
+    //             $('.header__list-sublist-wrap').css('display', 'none');
+    //             $('.header__list-open-submenu').removeClass('header__list-open-submenu--open');
+    //             menu.stop(true, true).slideToggle();
+    //             $('.hamburger--collapse').stop(true, true).toggleClass('is-active');
+    //                 // console.log('close menu if click on "body"')
+    //               }
+    //             });
 
-          };
-          /*if < window width*/
+    //       };
+    //       /*if < window width*/
 
-        };
-        /*menuON*/
-        menuOn();
+    //     };
+    //     /*menuON*/
+    //     menuOn();
 
-        $(window).resize(function() {
-          windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        // console.log("windowWidth", windowWidth);
-        removeInline();
-        refreshVar(); //part of the function of fixing the menu
-      });
-    //menu on hover end
+    //     $(window).resize(function() {
+    //       windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    //     // console.log("windowWidth", windowWidth);
+    //     removeInline();
+    //     refreshVar(); //part of the function of fixing the menu
+    //   });
+    // //menu on hover end
 
-    //menu scroll
-    //  $(".easyscroll").on("click", function (event) {
-    //    event.preventDefault();
-    //    var id  = $(this).attr('href'),
-    //    top = $(id).offset().top;
-    //    $('body,html').animate({scrollTop: top}, 600);
-    //  });
+    // //menu scroll
+    // //  $(".easyscroll").on("click", function (event) {
+    // //    event.preventDefault();
+    // //    var id  = $(this).attr('href'),
+    // //    top = $(id).offset().top;
+    // //    $('body,html').animate({scrollTop: top}, 600);
+    // //  });
 
-    //menu fixed on scroll
-    var navPos, winPos, navHeight;
+    // //menu fixed on scroll
+    // var navPos, winPos, navHeight;
 
-    function refreshVar() {
-        // navPos = $('nav').offset().top;
-        navPos = $('.header').outerHeight(true) / 2;
-        // console.log("navPos", navPos);
-        navHeight = $('.header__top-line').outerHeight(true);
-        // console.log("navHeight", navHeight);
-      };
-      refreshVar();
+    // function refreshVar() {
+    //     // navPos = $('nav').offset().top;
+    //     navPos = $('.header').outerHeight(true) / 2;
+    //     // console.log("navPos", navPos);
+    //     navHeight = $('.header__top-line').outerHeight(true);
+    //     // console.log("navHeight", navHeight);
+    //   };
+    //   refreshVar();
 
-      $('<div class="header__top-line--clone"></div>').insertBefore('.header__top-line').css('height', navHeight).hide();
+    //   $('<div class="header__top-line--clone"></div>').insertBefore('.header__top-line').css('height', navHeight).hide();
 
-      $(window).scroll(function() {
+    //   $(window).scroll(function() {
 
-        winPos = $(window).scrollTop();
-        // console.log("winPos", winPos);
-        if (winPos >= navPos) {
-          $('.header__top-line').addClass('header__top-line--fixed');
-          $('.header__top-line--clone').show();
-        } else {
-          $('.header__top-line').removeClass('header__top-line--fixed');
-          $('.header__top-line--clone').hide();
-        }
+    //     winPos = $(window).scrollTop();
+    //     // console.log("winPos", winPos);
+    //     if (winPos >= navPos) {
+    //       $('.header__top-line').addClass('header__top-line--fixed');
+    //       $('.header__top-line--clone').show();
+    //     } else {
+    //       $('.header__top-line').removeClass('header__top-line--fixed');
+    //       $('.header__top-line--clone').hide();
+    //     }
 
-      });
-    //menu fixed on scroll end
+    //   });
+    // //menu fixed on scroll end
 
-    //menu scroll and add class on scroll
+    // //menu scroll and add class on scroll
 
-    //scroll
-    var navHeight = $(".header__top-line").outerHeight(true);
+    // //scroll
+    // var navHeight = $(".header__top-line").outerHeight(true);
 
-    function showSection(section, isAnimate) {
-      var direction = section.replace(/#/, '');
-        // console.log(direction)
-        var reqSection = $('.section').filter('[data-section="' + direction + '"]');
+    // function showSection(section, isAnimate) {
+    //   var direction = section.replace(/#/, '');
+    //     // console.log(direction)
+    //     var reqSection = $('.section').filter('[data-section="' + direction + '"]');
 
-        var reqSectionPos = reqSection.offset().top - navHeight + 1;
-        // console.log("reqSectionPos", reqSectionPos);
+    //     var reqSectionPos = reqSection.offset().top - navHeight + 1;
+    //     // console.log("reqSectionPos", reqSectionPos);
 
-        if (isAnimate) {
-          $('body, html').animate({
-            scrollTop: reqSectionPos
-          }, 500);
-        } else {
-          $('body, html').scrollTop(reqSectionPos);
-        }
-      };
+    //     if (isAnimate) {
+    //       $('body, html').animate({
+    //         scrollTop: reqSectionPos
+    //       }, 500);
+    //     } else {
+    //       $('body, html').scrollTop(reqSectionPos);
+    //     }
+    //   };
 
-    //вызывать по клику  showSection($(this).attr('href'), true);
-    // $('.header__list-link').on('click', function (event) {
-    //   event.preventDefault();
-    //   showSection($(this).attr('href'), true);
+    // //вызывать по клику  showSection($(this).attr('href'), true);
+    // // $('.header__list-link').on('click', function (event) {
+    // //   event.preventDefault();
+    // //   showSection($(this).attr('href'), true);
+    // // });
+    // //scroll end
+
+    // //add class
+    // function checkSection() {
+
+    //   $('.section').each(function() {
+    //     var $this = $(this),
+    //     topEdge = $this.offset().top - $('.header__top-line').outerHeight(true),
+    //     bottomEdge = topEdge + $this.outerHeight(true),
+    //     wScroll = $(window).scrollTop();
+
+    //     if (topEdge < wScroll && bottomEdge > wScroll) {
+
+    //       var currentId = $this.data('section'),
+    //       reqLink = $('.header__list-link').filter('[href="#' + currentId + '"]');
+
+    //       reqLink.closest('.header__list-item').addClass('header__list-item--active').siblings().removeClass('header__list-item--active');
+
+    //             //простовляния хешей в адрессную строку
+    //             if (history.pushState) {
+    //               history.pushState(null, null, "#" + currentId);
+    //                 // console.log("modern work");
+    //               } else {
+    //                 // window.location.hash = currentId;
+    //                 location.hash = currentId;
+    //                 // console.log("old work");
+    //               }
+
+    //             }
+    //           });
+
+    // };
+
+    // // уменьшаю количество вызова функций при скролле
+    // /*
+    // var scrollTimeout;  // global for any pending scrollTimeout
+    // $(window).scroll(function () {
+    //   if (scrollTimeout) {
+    //     // clear the timeout, if one is pending
+    //     clearTimeout(scrollTimeout);
+    //     scrollTimeout = null;
+    //   }
+    //   scrollTimeout = setTimeout(checkSection, 500);
     // });
-    //scroll end
+    // */
 
-    //add class
-    function checkSection() {
+    // var didScroll = false;
 
-      $('.section').each(function() {
-        var $this = $(this),
-        topEdge = $this.offset().top - $('.header__top-line').outerHeight(true),
-        bottomEdge = topEdge + $this.outerHeight(true),
-        wScroll = $(window).scrollTop();
+    // window.onscroll = doThisStuffOnScroll;
 
-        if (topEdge < wScroll && bottomEdge > wScroll) {
+    // function doThisStuffOnScroll() {
+    //   didScroll = true;
+    // }
 
-          var currentId = $this.data('section'),
-          reqLink = $('.header__list-link').filter('[href="#' + currentId + '"]');
-
-          reqLink.closest('.header__list-item').addClass('header__list-item--active').siblings().removeClass('header__list-item--active');
-
-                //простовляния хешей в адрессную строку
-                if (history.pushState) {
-                  history.pushState(null, null, "#" + currentId);
-                    // console.log("modern work");
-                  } else {
-                    // window.location.hash = currentId;
-                    location.hash = currentId;
-                    // console.log("old work");
-                  }
-
-                }
-              });
-
-    };
-
-    // уменьшаю количество вызова функций при скролле
-    /*
-    var scrollTimeout;  // global for any pending scrollTimeout
-    $(window).scroll(function () {
-      if (scrollTimeout) {
-        // clear the timeout, if one is pending
-        clearTimeout(scrollTimeout);
-        scrollTimeout = null;
-      }
-      scrollTimeout = setTimeout(checkSection, 500);
-    });
-    */
-
-    var didScroll = false;
-
-    window.onscroll = doThisStuffOnScroll;
-
-    function doThisStuffOnScroll() {
-      didScroll = true;
-    }
-
-    setInterval(function() {
-      if (didScroll) {
-        didScroll = false;
-        checkSection();
-      }
-    }, 500);
+    // setInterval(function() {
+    //   if (didScroll) {
+    //     didScroll = false;
+    //     checkSection();
+    //   }
+    // }, 500);
 
     //add class end
 
