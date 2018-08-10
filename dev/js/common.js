@@ -14,7 +14,7 @@
       $(this).addClass('menu-open');
     }, function() {
 
-      // $(this).removeClass('menu-open');
+      $(this).removeClass('menu-open');
     });
 
 
