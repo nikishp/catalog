@@ -8,4 +8,6 @@ build
 
 .gulp
 
+dev/root_file/video
+
 package-lock.json

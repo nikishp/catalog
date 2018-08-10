@@ -9,7 +9,25 @@ block content
   .container
     .row
       .col
-        
+        .reviews__control
+          .reviews__control-links
+            a.reviews__control-link(href="#", data-filter="all") Все
+            a.reviews__control-link(href="#", data-filter="withoutVideo") Текстовые отзывы
+            a.reviews__control-link(href="#", data-filter="withVideo") Видео отзывы 
+          .reviews__control-add 
+            +btn(' btn--reverse btn--blue','#','Добавить отзыв','right-arrow')
+
+        .reviews__content
+          .reviews__item.withoutVideo  Lorem ipsum dolor.
+          .reviews__item.withoutVideo  Lorem ipsum dolor.
+          .reviews__item.withoutVideo  Lorem ipsum dolor.
+          .reviews__item.withoutVideo  Lorem ipsum dolor.
+          .reviews__item.withoutVideo  Lorem ipsum dolor.
+          .reviews__item.withVideo  Lorem ipsum dolor.
+          .reviews__item.withVideo  Lorem ipsum dolor.
+          .reviews__item.withVideo  Lorem ipsum dolor.
+          .reviews__item.withVideo  Lorem ipsum dolor.
+
 
 
 
