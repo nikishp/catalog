@@ -1,5 +1,5 @@
 .universal-nav
-  padding: 20px 0
+  // padding: 20px 0
   background-color: $blue
 
 
@@ -16,12 +16,19 @@
 
 .universal-nav__item
   position: relative
-  border-right: 1px solid #fff
+  &:not(:last-child)
+    // border-right: 1px solid #fff
+    &::before
+      content: ''
+      position: absolute
+      top: 16px
+      right: 0
+      bottom: 16px
+      width: 1px
+      background: #fff
   &:first-child
     .universal-nav__link
       padding-left: 0
-  &:last-child
-    border: none
   &:hover
     .universal-nav__link
       color: $action_color
@@ -29,6 +36,8 @@
   color: $action_color
 .universal-nav__link
   display: block
+  padding-top: 20px
+  padding-bottom: 20px
   padding-right: 27px
   padding-left: 27px
   transition: color .25s linear
@@ -69,23 +78,56 @@
 .universal__sublist
   position: absolute
   top: 100%
-  // top: calc(100% + 20px)
   left: 0
-  width: 300px
-  background: red
-  display: none
+  z-index: 20
+  flex-wrap: wrap
+  color: rgba(53, 60, 112, 1)
+  font-size: 17px
+  background: #fff
+  box-shadow: 0 0 10px 0 rgba(53, 60, 112, 0.2)
+  visibility: hidden
+  opacity: 0
+  transition: opacity .25s linear
   .universal__sublist
-    display: none
     top: 0
     left: 100%
+    visibility: hidden
+    opacity: 0
+    transition: opacity .25s linear
+.universal__sublist-item
+  position: relative
+  width: 300px
+
+.universal__sublist-link
+  position: relative
+  z-index: 3
+  display: block
+  padding: 10px 15px
+  padding-left: 25px
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    z-index: -1
+    width: 0
+    opacity: 0
+    background-image: linear-gradient(to right,#272d59 0%,#49e7e6 100%);
+    transition: width .25s , opacity .25s 
 .menu-open
   &>.universal__sublist
-    display: block
+    display: flex
+    visibility: visible
+    opacity: 1
 
-
-
-
-
+.universal__sublist-item.menu-open
+  color: #fff
+.menu-open
+  &>.universal__sublist-link
+    &::before
+      opacity: 1
+      width: 100%
 
 
 

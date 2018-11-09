@@ -30,6 +30,38 @@ mixin def_top(formClass,formId)
           span.btn__svg
             +svg('right-arrow')
           span.btn__name Записаться на прием
+mixin recall(formClass,formId)
+  - formClass = formClass || ''
+  - formId = formId || ''
+  form(class='form ' + formClass, id=''+formId, action='#', enctype='multipart/form-data')
+    // Hidden Required Fields
+    input(name='form_subject', value='' + formTitle, type='hidden')
+    // END Hidden Required Fields
+    h6.h6 !{formTitle}
+    | !{subtitle}
+    ul.form__list
+      li.form__item
+        label(for="inp_1") Ваше имя
+        input(type='text', id="inp_1", required='', name='Ваше имя', placeholder='')
+      li.form__item
+        label(for="inp_2") Номер телефона
+        input(type='tel', id="inp_2", required='', name='Номер телефона', placeholder='')
+      //- li.form__item.form__item--textarea
+        label(for="inp_3") Сообщение
+        textarea(name="Сообщение", id="inp_3")
+      li.form__item.form__item--button
+        button(type="submit", class="btn btn--blue btn--reverse")
+          span.btn__svg
+            +svg('right-arrow')
+          span.btn__name Заказать
+    //- .form__foot
+      .form__foot-item
+        .form__police
+      .form__foot-item
+        button(type="submit", class="btn btn--inversion btn--reverse")
+          span.btn__svg
+            +svg('right-arrow')
+          span.btn__name Записаться на прием
 mixin def(formClass,formId)
   - formClass = formClass || ''
   - formId = formId || ''
@@ -62,7 +94,7 @@ mixin def(formClass,formId)
           span.btn__svg
             +svg('right-arrow')
           span.btn__name Записаться на прием
-
+mixin default(formClass,formId)
   - formClass = formClass || ''
   - formId = formId || ''
   form(class='form ' + formClass, id=''+formId, action='#', enctype='multipart/form-data')
@@ -118,6 +150,33 @@ mixin def_text(formClass,formId)
           span.btn__svg
             +svg('right-arrow')
           span.btn__name Отправить
+
+mixin def_rev(formClass,formId)
+  - formClass = formClass || ''
+  - formId = formId || ''
+  form(class='form ' + formClass, id=''+formId, action='#', enctype='multipart/form-data')
+    // Hidden Required Fields
+    input(name='form_subject', value='' + formTitle, type='hidden')
+    // END Hidden Required Fields
+    h6.h6 !{formTitle}
+    | !{subtitle}
+    ul.form__list
+      li.form__item
+        label(for="inp_1") Ваше имя
+        input(type='text', id="inp_1", required='', name='Ваше имя', placeholder='')
+      li.form__item
+        label(for="inp_2") Номер телефона
+        input(type='tel', id="inp_2", required='', name='Номер телефона', placeholder='')
+      li.form__item.form__item--textarea
+        label(for="inp_3") Сообщение
+        textarea(name="Сообщение", id="inp_3")
+      li.form__item.form__item--button
+        button(type="submit", class="btn btn--inversion-reverse btn--reverse")
+          span.btn__svg
+            +svg('right-arrow')
+          span.btn__name Оставть отзыв
+
+
 mixin wis_form(formClass,formId)
   - formClass = formClass || ''
   - formId = formId || ''
@@ -147,3 +206,37 @@ mixin wis_form(formClass,formId)
           span.btn__svg
             +svg('right-arrow')
           span.btn__name Записаться на прием
+mixin wis_form2(formClass,formId)
+  - formClass = formClass || ''
+  - formId = formId || ''
+  form(class='form ' + formClass, id=''+formId, action='#', enctype='multipart/form-data')
+    // Hidden Required Fields
+    input(name='form_subject', value='' + formTitle, type='hidden')
+    // END Hidden Required Fields
+    h6.h6 !{formTitle}
+    //- .form__subtitle  
+    .form__list
+      .form__list-part.form__list-part--left
+        .form__item
+          label(for="inp_1") Ваше имя
+          input(type='text', id="inp_1", required='', name='Ваше имя', placeholder='')
+        .form__item
+          label(for="inp_2") Номер телефона
+          input(type='tel', id="inp_2", required='', name='Номер телефона', placeholder='')
+          .phone__warning * не отображается на сайте
+      .form__list-part.form__list-part--right
+        .form__item.form__item--textarea
+          label(for="inp_3") Сообщение
+          textarea(name="Сообщение", id="inp_3")
+    .form__foot
+      .form__foot-item
+        input#main-inputFile.inputfile(type='file', name='userfile[]', data-multiple-caption='{count} файла(ов) выбрано')
+        label.inputfile-label(for='main-inputFile')
+          i
+            +svg('load') 
+          span Прикрепить видео
+      .form__foot-item 
+        button(type="submit", class="btn btn--inversion")
+          span.btn__svg
+            +svg('right-arrow')
+          span.btn__name Оставить отзыв
